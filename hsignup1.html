@@ -1,0 +1,245 @@
+<html>
+<head>
+	<title>ABC Hospital Sign Up</title>
+	<style>
+		body {
+		  background-image:url("https://envato-shoebox-0.imgix.net/8ecc/a8fd-3bb6-48ad-acad-76573da6f10c/202003094548.JPG?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1600&s=6fceadb799c8a7759ffb2b1cc7463a40" );
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;
+		  background-size: cover;
+		}
+
+div.signup {
+  position: absolute;
+  background-color:#E7E7E7;
+  width: 300px;
+  border: 15px solid #EA94EE;
+  padding: 50px;
+  right: 150px;  
+
+}
+
+div.boxframe {
+  position: absolute;
+  background-color: white;
+  width: 400px;
+  border: 15px dashed #8779FF;
+  padding: 50px;
+  left: 30px;  
+
+}
+
+div.qlinks {
+  position: absolute;
+  background-color: white;
+  width: 400px;
+  border: 15px dashed #8779FF;
+  padding: 30px;
+  left: 30px;  
+margin-top: 400px;
+
+}
+
+div.imap {
+  position: absolute;
+  background-color: white;
+  width: 400px;
+  border: 15px dashed #8779FF;
+  padding: 30px;
+  left: 30px;  
+margin-top: 700px;
+
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+
+.navbar {
+  overflow: hidden;
+  background-color: #FFDEFF;
+}
+
+.navbar a {
+  float: left;
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  padding: 34px 36px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 20px;  
+  border: none;
+  outline: none;
+  color: black;
+  padding: 34px 36px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #FD8FFD;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+
+<script>
+function verifyDetails() {
+  var password = document.myform.password.value;
+  var cpassword = document.myform.cpassword.value;
+  var name = document.myform.Name.value;
+  var dob= document.myform.birthday.value;
+  var dobcheck=dob.substring(0, 4);
+  var bday=parseInt(dobcheck);
+
+  if(name== "") {
+     alert("Name is empty!");
+     return false;
+  }
+
+  else if(name.length >30) {
+     alert("Name length must be less than 30 characters!");
+     return false;
+  }
+
+  //check empty password field
+  else if(password== "" || cpassword=="") {
+     alert("Password is empty!");
+     return false;
+  }
+ 
+ //minimum password length validation
+  else if(password.length < 8) {
+     alert("Password length must be atleast 8 characters!");
+     return false;
+  }
+
+//maximum length of password validation
+  else if(password.length > 20) {
+     alert("Password length must be less than 20 characters!");
+     return false;
+  } 
+
+//passwords don't match
+  else if(password.localeCompare(cpassword)){
+     alert("Passwords don't match!");
+     return false;
+  }
+  
+  else if(dob==null || dob=="" || Math.abs(2022-bday)<18 || Math.abs(2022-bday)>100) {  
+	  alert("Invalid Date of Birth!");  
+	  return false;  
+	}	
+
+let x = Math.floor((Math.random() * 99999) + 10000);
+alert("Your registration number is "+x);
+
+  return true;
+}
+</script>
+
+<body style="text-align:center">
+<div class="navbar">
+<h1>Welcome to ABC Hospitals</h1>
+  <div class="dropdown">
+    <button class="dropbtn">Log in/ Register 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="hsignup1.html">Sign up</a>
+      <a href="log.html">Log in</a>
+    </div>
+  </div> 
+<a href="home.html">Home</a>
+<a href="book.html">Book appointment</a>
+<a href="medicine.html">Buy medicines</a>
+<a href="fac.html">Facilities</a>
+<a href="welcome.html">About us </a>
+</div>
+<h4 style="background-color:white;"> <marquee>Due to the ongoing COVID-19 pandemic please maintain social distancing and wear masks for your safety.</marquee></h4>
+	
+<h2 style="background-color:#BFECFB;">Sign Up to get Access to Medical Resources</h2>
+
+        <div class="signup">
+	<form name="myform" method="post" action="hsignup1.html" onsubmit ="return verifyDetails()">
+        <label><h3><mark>Enter your Email</mark></h3></label><br>
+	<input type="email" name="email"><br><br>
+	<label><h3><mark>Enter Your Password</mark></h3></label><br>
+	<input type="password" name="password"><br><br>
+	<label><h3><mark>Confirm Your Password</mark></h3></label><br>
+	<input type="password" name="cpassword"><br><br>
+	<label><h3><mark>Enter Your Name</mark></h3></label><br>
+	<input type="text" name="Name"><br><br><br>
+	<label><h3><mark>Enter Your Date of Birth</mark></h3></label><br>
+	<input type="date" name="birthday"><br><br>
+	<label><h3><mark>Enter Your GENDER</mark></h3></label><br>
+	<input type="radio" id="gender"name="gender"value="male"/><span style="color:black;">Male</span><br>
+	<input type="radio" id="gender"name="gender"value="female"/><span style="color:black;">Female</span><br>
+	<input type="radio" id="gender"name="gender"value="others"/><span style="color:black;">Others</span><br><br><br>
+	
+	<textarea id="disclaimer" name="disclaimer" rows="4" cols="30">How did you get to know about us? </textarea>
+	
+	<br><br><br><input type="submit" value="Submit"></span><input type="reset" value="Reset">
+	
+	</form>
+
+        <div class="slidecontainer">
+        <p>Send notifications and newsletters?</p>
+        <input type="range" min="1" max="2" value="1">
+        </div>
+        </div>
+
+<div class="boxframe"><iframe src="box.html" style="height:200px;width:400px" title="Iframe Example"></iframe></div>
+<div class="qlinks"><h3 align="left">By signing up you'll be able to:</h3>
+<ul>
+<li align="left">Book appointment with doctors</a></li>
+<li align="left">Buy medicines online</a></li>
+<li align="left">Receive access to best healthcare services</a></li>
+</ul>
+(At ABC Hospitals your data will remain safe. For more information, read our terms and policies.)
+</div>
+
+<div class="imap"><h3 align="left">Click on image:</h3><img src="https://www.verywellhealth.com/thmb/Mrye9i4GRwPZadsy9n7TotElTFM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/types-of-doctors-1736311_final-e807c88a56fc45569caa2afde85f71ac.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+
+<map name="workmap">
+  <area shape="rect" coords="12,11,392,192" alt="Phycisain" href="doclist.html">
+  <area shape="rect" coords="10,238,164,377" alt="family doctor" href="famdoc.html">
+<area shape="rect" coords="237,244,390,375" alt="surgeon" href="surgeonlist.html">
+</map></div>
+</body>
+</html>

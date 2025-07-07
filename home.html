@@ -1,0 +1,301 @@
+<html>
+<head>
+	<title>ABC Hospital Sign Up</title>
+	<style>
+		body {
+		  background-image:url("https://envato-shoebox-0.imgix.net/8ecc/a8fd-3bb6-48ad-acad-76573da6f10c/202003094548.JPG?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1600&s=6fceadb799c8a7759ffb2b1cc7463a40" );
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;
+		  background-size: cover;
+		}
+
+div.testimony {
+  position: absolute;
+  background-color:#E7E7E7;
+  width: 500px;
+  border: 15px solid #EA94EE;
+  padding: 50px;
+  right: 20px;  
+
+}
+
+div.news {
+  position: absolute;
+  background-color: white;
+  width: 350px;
+  border: 15px dashed #8779FF;
+  padding: 50px;
+  left: 30px;  
+
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #FFDEFF;
+}
+
+.navbar a {
+  float: left;
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  padding: 34px 36px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 20px;  
+  border: none;
+  outline: none;
+  color: black;
+  padding: 34px 36px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #FD8FFD;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #f1f1f1f1;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: cornflowerblue;}
+
+</style>
+<script>
+function setCookie(cname,cvalue,exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  let user = getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+     user = prompt("What should we call you:","");
+     if (user != "" && user != null) {
+       setCookie("username", user, 30);
+	   alert("Welcome " + user);
+     }
+  }
+}
+</script>
+</head>
+<body style="text-align:center" onload="checkCookie()">
+<div class="navbar">
+<h1>Welcome to ABC Hospitals</h1>
+  <div class="dropdown">
+    <button class="dropbtn">Log in/ Register 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="hsignup1.html">Sign up</a>
+      <a href="log.html">Log in</a>
+    </div>
+  </div> 
+<a href="home.html">Home</a>
+<a href="book.html">Book appointment</a>
+<a href="medicine.html">Buy medicines</a>
+<a href="fac.html">Facilities</a>
+<a href="welcome.html">About us </a>
+</div>
+<h4 style="background-color:white;"> <marquee>Due to the ongoing COVID-19 pandemic please maintain social distancing and wear masks for your safety.</marquee></h4>
+
+<div class="news">
+<h2>Latest news</h2>
+<marquee direction="up">
+<ul>
+<li>ABC Hospitals receives award from WHO</li>
+<br>
+<li>ABC Hospitals donates to charity hosted by PM</li>
+<br>
+<li>ABC Hospitals sets Guiness record for best healthcare</li>
+</ul>
+</marquee>
+
+<button onclick="document.getElementById('demo').innerHTML=Date()">Display time: </button>
+
+<p id="demo"></p>
+</div>
+
+<div class="testimony">
+<h2>Hear our patients' testimonies</h2>
+<div class="slideshow-container">
+
+<div class="mySlides">
+  <q>I am healthy and back to normal from COVID-19 thanks to ABC doctors.</q>
+  <p class="author">- John Keats</p>
+</div>
+
+<div class="mySlides">
+  <q>ABC Hospitals made healthcare affordable and easy to access.</q>
+  <p class="author">- Ernest Hemingway</p>
+</div>
+
+<div class="mySlides">
+  <q>The treatment I received for heart surgery was truly the best.</q>
+  <p class="author">- Thomas A. Edison</p>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+</body>
+</html>

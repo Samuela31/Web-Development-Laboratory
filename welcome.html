@@ -1,0 +1,145 @@
+<html>
+<head>
+	<title>ABC Hospitals Founding</title>
+	<style>
+		body {
+		  background-image:url("https://img.freepik.com/free-vector/gradient-pastel-sky-background_23-2148923837.jpg?w=2000" );
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;
+		  background-size: cover;
+		}
+ h2, p {
+  text-align: center;
+  color: purple;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #FFDEFF;
+}
+
+.navbar a {
+  float: left;
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  padding: 34px 36px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 20px;  
+  border: none;
+  outline: none;
+  color: black;
+  padding: 34px 36px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #FD8FFD;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body style="text-align:center">
+<div class="navbar">
+<h1>Welcome to ABC Hospitals</h1>
+  <div class="dropdown">
+    <button class="dropbtn">Log in/ Register 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="hsignup1.html">Sign up</a>
+      <a href="log.html">Log in</a>
+    </div>
+  </div> 
+<a href="home.html">Home</a>
+<a href="book.html">Book appointment</a>
+<a href="medicine.html">Buy medicines</a>
+<a href="fac.html">Facilities</a>
+<a href="welcome.html">About us </a>
+</div>
+	<h1 style="background-color:#ADE2FC;">ABC Hospitals Founding</h1>
+<button id="change">Click to change text color</button>
+<object data="wel.gif" width="900" height="300"></object>
+
+<br><br>    <p>
+Today is a landmark day for ABC as we complete 39 years of dedicated patient care. Over the years ABC has been he pioneer of healthcare in India, and we are humbled by the love and trust placed in us by over 200 million patients and their families. It has motivated us to put in tireless efforts and remain unwavering in our commitment to bring you the best healthcare in the world.<br><br>
+
+As we enter our 40th year, I want to re-affirm this commitment - ABC will always bring you the best healthcare in the world, no matter what. This is our mission. Today with over 10,000 beds, 400 clinics, 5,000 pharmacies and our 24/7 digital channel, we bring the best, most comprehensive omnichannel care to you wherever you are and whenever you need it.<br><br>
+
+We have the best doctors and the most care-focused teams coupled with the most advanced equipment, cutting-edge treatments and technologies, including Proton therapy, robotic surgeries, artificial intelligence and more. These ensure we can get you healthy quickly so you can get back to leading a happy and fulfilling life.</p><br><br>
+
+<p align="left" onmouseover = "sayHello()">We have:-
+<ul align="left">
+<li>Gynacologists</li>
+<li>Neurologists</li>
+<li>Cardiologists</li>
+<li>Dermatologists</li>
+
+<ul align="left" id="fc">
+<li>Oeration theater</li>
+<li>Patient care rooms</li>
+<li>Pharmacy</li>
+<li>24/7 care</li>
+<ul>
+<ul></p>
+<button onclick="myFunction()">Click to change text in list</button>
+
+<script>
+
+    document.getElementById('change').onclick = changeColor;   
+
+    function changeColor() {
+        document.body.style.color = "blue";
+        return true;
+    }  
+
+  function myFunction() {
+  var ele = document.getElementsByTagName("ul")[0];
+  ele.getElementsByTagName("li")[1].innerHTML = "WE ARE GOING TO CHANGE!!!";
+  ele.getElementsByTagName("li")[2].innerHTML = "I GOT CHANGED!! LOOK!!!";
+  document.getElementById("fc").style.fontFamily = "Brush Script MT";
+}
+
+function sayHello() {
+               alert("Mouse Over List")
+            }
+
+</script>
+	
+</body>
+<html>
